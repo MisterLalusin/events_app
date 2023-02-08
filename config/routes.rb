@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
-  get 'pages/home'
-  get 'pages/events'
+  resources :posts
+  #get 'pages/home'
+  #get 'pages/events'
+
+  get 'posts', to: 'pages#posts'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
   # root "articles#index"
+  root "pages#home"
 end
