@@ -2,7 +2,7 @@ require 'date'
 
 class Post < ApplicationRecord
     validates :title, presence: true, length: { minimum: 5, maximum: 50 }
-    validates :body, presence: true, length: { minimum: 10, maximum: 1000 }
+    validates :body, presence: true, length: { minimum: 5, maximum: 1000 }
     validates :events, presence: true
     validates_time :events, between: ['8:00am', '8:00pm'],
                                 :message => " to be set are only between 8AM-8PM in the evening. No events allowed outside these hours."
